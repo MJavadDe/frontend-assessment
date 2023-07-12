@@ -24,6 +24,8 @@ const App = () => {
     }
     await navigator.share(pageUrl)
   }
+  document.title = data?.name +" "+ data?.family
+
 
   useEffect(() => {
     fetch("/profile.json")
@@ -40,7 +42,6 @@ const App = () => {
     //   satisfaction,
     //   commentsCount,
     //   waitingTime
-    document.title = data?.name +" "+ data?.family
   }, []);
 
   if (!data) return null;
