@@ -5,15 +5,32 @@ export const Service = ({ waitingTime }) => {
   const [waitingTimeText, setWaitingTimeText] = useState("");
 
   useEffect(() => {
-    if (waitingTime === 0) {
-      setWaitingTimeText("Less than half an hour");
-    } else if (waitingTime === 1) {
-      setWaitingTimeText("Less than an hour");
-    } else if (waitingTime === 2) {
-      setWaitingTimeText("Less than two hours");
-    } else if (waitingTime === 3) {
-      setWaitingTimeText("More than two hours");
+
+    switch(waitingTime){
+      case 0:
+        setWaitingTimeText("Less than half an hour");
+        break;
+      case 1:
+        setWaitingTimeText("Less than an hour");
+        break;
+      case 2:
+        setWaitingTimeText("Less than two hours");
+        break;
+      case 3:
+        setWaitingTimeText("More than two hours");
+        break;
+        default:
+          setWaitingTimeText("Unavailable");
     }
+    // if (waitingTime === 0) {
+    //   setWaitingTimeText("Less than half an hour");
+    // } else if (waitingTime === 1) {
+    //   setWaitingTimeText("Less than an hour");
+    // } else if (waitingTime === 2) {
+    //   setWaitingTimeText("Less than two hours");
+    // } else if (waitingTime === 3) {
+    //   setWaitingTimeText("More than two hours");
+    // }
   }, [waitingTime]);
 
   return (
