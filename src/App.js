@@ -65,7 +65,7 @@ const App = () => {
           <div className="h-56 bg-white rounded-lg bg-opacity-60 flex flex-col p-4 gap-4">
             <div className="flex justify-between">
               <div className="flex gap-3">
-                <div className="flex items-center cursor-pointer gap-1" onClick={changeSaveFill}><SaveIcon fill={saveFill}/> <span>Save</span></div>
+                <div className="flex items-center cursor-pointer gap-1" onClick={changeSaveFill}><SaveIcon fill={saveFill}/> <span>Save<span className={saveFill?"inline":"hidden"}>d</span></span></div>
                 <div className="flex items-center cursor-pointer gap-1" onClick={shareWindow}><ShareIcon/> <span>Share</span></div>
               </div>
               <div className="flex items-center"><ViewIcon/> <span>{numberFormatter(data?.viewCount)}</span></div>
